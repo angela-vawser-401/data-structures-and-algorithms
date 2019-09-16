@@ -1,8 +1,8 @@
-# LAB - 
+# CODING CHALLENGES 
 
-## Project Name
+## TABLE OF CONTENTS
 
-### Author: Student/Group Name
+### Author: Angela Vawser
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
