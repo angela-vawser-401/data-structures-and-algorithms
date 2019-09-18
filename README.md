@@ -6,3 +6,4 @@
 
 ### Links
 ![array-reverse](challenges/array-reverse)
+![array-shift](challenges/array-shift)
