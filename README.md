@@ -5,4 +5,6 @@
 ### Author: Angela Vawser
 
 ### Links
-![array-reverse](challenges/array-reverse)
+* ![All Tests](challenges/__tests__)
+* ![array-reverse](challenges/array-reverse)
+* ![array-shift](challenges/array-shift)
