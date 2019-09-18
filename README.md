@@ -5,5 +5,5 @@
 ### Author: Angela Vawser
 
 ### Links
-![array-reverse](challenges/array-reverse)
-![array-shift](challenges/array-shift)
+* ![array-reverse](challenges/array-reverse)
+* ![array-shift](challenges/array-shift)
