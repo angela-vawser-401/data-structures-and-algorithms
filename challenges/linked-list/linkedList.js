@@ -43,13 +43,22 @@ class LinkedList {
     } return false;
   }
 
-// define a method alled toString that takes in no arguments 
-// and returns a string representing all the values in the Linked List
-
-
-// Catch and handle any exceptions and return a printed value or operation 
-// which cleanly represents the state and either stops execution cleanly, or 
-// provides the user with clear direction and output
-
+/**
+   * Turns all the values from the list into a string
+   * @returns {string}
+   */
+  toString() {
+    let string = '';
+    let currentNode = this.head;
+    for(let i = 0; i < this.size; i++) {
+      string = string + currentNode.value;
+      currentNode = currentNode.next;
+    } return string;
+  }
 
 }
+
+module.exports = { 
+  Node,
+  LinkedList,
+};

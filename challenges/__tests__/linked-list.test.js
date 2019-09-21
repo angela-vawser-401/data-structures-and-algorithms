@@ -55,5 +55,15 @@ describe('Linked List', () => {
   });
 
 // Can properly return a collection of all the values that exist in the linked list
+  it('will return all the values in the list', () => {
+    const list = new linkedListModel.LinkedList();
+    const valueOne = 3;
+    const valueTwo = 'red';
+    const valueThree = 'favorite';
+    list.insert(valueOne);
+    list.insert(valueTwo);
+    list.insert(valueThree);
+    expect(list.toString()).toBe('favoritered3');
+  });
 
-})
+});
