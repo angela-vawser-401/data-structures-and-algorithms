@@ -27,7 +27,7 @@ class LinkedList {
   }
 
 /**
-   * Checks to see if list includes given value?
+   * Checks to see if list includes given value
    * @param value 
    * @returns {boolean}
    */
