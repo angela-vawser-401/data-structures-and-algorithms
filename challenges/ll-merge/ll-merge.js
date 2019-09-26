@@ -1,156 +1,65 @@
-// Create a Node class that has properties for the value stored in the Node, 
-// and a pointer to the next Node. Within your LinkedList class, include a 
-// head property. Upon instantiation, an empty Linked List should be created
+const llModel = require('../ll-insertions/ll-insertions');
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
+const listA = new llModel.LinkedList();
+const valueA = 5;
+const valueB = 'bird';
+const valueC = 'smile';
+listA.insert(valueA);
+listA.insert(valueB);
+listA.insert(valueC);
+
+const listB = new llModel.LinkedList();
+const valueD = 3;
+const valueE = 'cat';
+const valueF = 'frown';
+listB.insert(valueD);
+listB.insert(valueE);
+listB.insert(valueF);
+listB.insert('walnut');
+
+function mergeLists(listA, listB) {
+  const newList = new llModel.LinkedList();
+  let currentA = listA.head;
+  let currentB = listB.head;
+
+  if(!listA.head) {
+    return listB.head;
   }
+
+  if(!listB.head) {
+    return listA.head;
+  }
+
+  while(currentA.next !== null && currentB.next !== null) {
+    newList.append(currentA.value);
+    newList.append(currentB.value);
+    currentA = currentA.next;
+    currentB = currentB.next;
+  }
+  newList.append(currentA.value);
+  newList.append(currentB.value);
+
+  if(listA.size > listB.size) {
+    currentA = currentA.next;
+    while(currentA.next) {
+      newList.append(currentA.value);
+      currentA = currentA.next;
+    }
+    newList.append(currentA.value);
+  }
+
+  if(listB.size > listA.size) {
+    currentB = currentB.next;
+    while(currentB.next) {
+      newList.append(currentB.value);
+      currentB = currentB.next;
+    }
+    newList.append(currentB.value);
+  }
+  
+  return newList.head;
 }
 
-class LinkedList {
-  constructor() {
-    this.head = null;
-    this.size = 0;
-  }
+mergeLists(listA, listB);
 
-/**
-   * Insert value at the head of list
-   * @param value 
-   */
-  insert(value) {
-    const node = new Node(value);
-    node.next = this.head;
-    this.head = node;
-    this.size++; 
-  }
-
-/**
-   * Checks to see if list includes given value
-   * @param value 
-   * @returns {boolean}
-   */
-
-  includes(value) {
-    let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
-      if(currentNode.value === value) {
-        return true;
-      } else {
-        currentNode = currentNode.next;
-      }
-    } return false;
-  }
-
-/**
-   * Turns all the values from the list into a string
-   * @returns {string}
-   */
-  toString() {
-    let string = '';
-    let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
-      string = string + currentNode.value;
-      currentNode = currentNode.next;
-    } return string;
-  }
-
-  append(value) {
-    const node = new Node(value);
-
-    if(this.size) {
-      this.tail.next = node;
-      node.previous = this.tail;
-      this.tail = node;
-    }
-    else {
-      this.head = node;
-      this.tail = node;
-    }
-    this.size++;
-    return node.value;
-  }
-
-  insertBefore(value, newVal) {
-    let newNode = new Node(newVal);
-    let node = this.head;
-    
-    if(node.value === value) {
-      this.insert(newVal);
-    }
-    while(node.next) {
-      if(!this.head) {
-        this.head = new Node(newVal);
-        return;
-      }
-
-      if(node.next.value === value) {
-        newNode.next = node.next;
-        node.next = newNode;
-        node = newNode;
-      }
-      node = node.next;
-    }
-  }
-
-  insertAfter(value, newVal) {
-    let node = this.head;
-    while(node) {
-      if(!this.head) {
-        this.head = new Node(newVal);
-        return;
-      }
-
-      if(node.value === value) {
-        let newNode = new Node(newVal);
-        newNode.next = node.next;
-        node.next = newNode; 
-
-        return node;
-      }
-      node = node.next;
-    }
-  }
-
-  kthFromEnd(ll, k) {
-    let node = ll.head;
-    let index = 0;
-    let res;
-    console.log(ll);
-    if(k < 0) {
-      throw new Error('input is too small');
-    }
-
-    if(ll.size === 1) {
-      throw new Error('make list longer');
-    }
-
-    if(k === ll.size) {
-      throw new Error('input cannot be the same length as list');
-    }
-
-    if(k > ll.size) {
-      throw new Error('input is too big');
-    }
-
-    while(node) {
-
-      if(index === k) {
-        res = ll.head;
-      }
-      else if(index - k > 0) {
-        res = res.next;
-      }
-      index++;
-
-      node = node.next;
-    }
-    return res.value;
-  }
-}
-
-module.exports = { 
-  Node,
-  LinkedList,
-};
+module.exports = mergeLists;

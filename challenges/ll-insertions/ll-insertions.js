@@ -119,7 +119,7 @@ class LinkedList {
     let res;
     console.log(ll);
     if(k < 0) {
-      throw new Error('input is too small');
+      throw new Error('input is way too small');
     }
 
     if(ll.size === 1) {
