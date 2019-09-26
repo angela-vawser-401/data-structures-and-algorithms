@@ -1,8 +1,8 @@
-const binarySearch = require('./array-binary-search.js');
+const binarySearch = require('../array-binary-search/arrayBinarySearch');
 
-const array = [4,8,15,16,23,42];
+const array = [4, 8, 15, 16, 23, 42];
 const key = 15;
-const nextArray = [11,22,33,44,55,66,77];
+const nextArray = [11, 22, 33, 44, 55, 66, 77];
 const nextKey = 90;
 
 describe('search for value in array ', () => {
