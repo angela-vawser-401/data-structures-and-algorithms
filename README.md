@@ -12,3 +12,4 @@
 * ![linked-list](challenges/linked-list)
 * ![ll-insertions](challenges/ll-insertions)
 * ![ll-merge](challenges/ll-merge)
+* ![stack-and-queue](challenges/stack-and-queue)

@@ -1,11 +1,11 @@
 # Implement a Stack and a Queue Data Structure
-A function called insertShiftArray which takes in an array and a value to be added and returns an array with the new value added at the beginning index.
+Write a function with classes and methods that allow one to implement a Stack and Queue Data Structure. 
 
 ## Challenge
-Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the beginning index.
+Create Node, Stack, and Queue classes that can be manipulated through push, pop, peek, enqueue, and dequeue methods. Write tests for all methods.
 
 ## Approach & Efficiency
-I did a for loop on the length of the argument array using i-- to subtract each index w/ each loop that was greater than 0, then added the new value to the beginning of the mutated array.
+First I created a Node class w/ properties for the value stored in the Node, and a pointer to the next node. Next, I created a Stack class w/ a top property. It creates an empty Stack when instantiated. Finally, I created a Queue class w/ a front property that creates an empty Queue when instantiated.
 
 ## Solution
-![UML Diagram](assets/array-shift.jpg)
+![UML Diagram](assets/stack-and-queue.jpg)
