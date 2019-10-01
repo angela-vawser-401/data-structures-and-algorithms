@@ -13,3 +13,4 @@
 * ![ll-insertions](challenges/ll-insertions)
 * ![ll-merge](challenges/ll-merge)
 * ![stack-and-queue](challenges/stack-and-queue)
+* ![queue-with-stacks](challenges/queue-with-stacks)
