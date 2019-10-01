@@ -52,25 +52,54 @@ describe('Stacks and Queues', () => {
     expect(firstStack.top).toBe(null);
   });
 
-  it('takes a value and adds new node to the back of the queue', () => {
-    const firstQueue = new Queue();
-    firstQueue.push('Real');
-    firstQueue.push('Good');
-    firstQueue.push('Food');
-    expect(firstQueue.enqueue('It/s')).toBe('Real');
-
+  it('can instatiate an empty stack', () => {
+    const testStack = new Stack();
+    expect(testStack.top).toBe(null);
   });
 
-  // Can successfully enqueue into a queue
+  it('enqueues a new node into the queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('whoa');
+    expect(newQueue.front.value).toBe('whoa');
+  });
 
-  // Can successfully enqueue multiple values into a queue
+  it('enqueues multiple nodes into the queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('boom');
+    newQueue.enqueue('pow');
+    expect(newQueue.front.value).toBe('boom');
+    expect(newQueue.front.next.value).toBe('pow');
+  });
 
-  // Can successfully dequeue out of a queue the expected value
+  it('dequeues the first node', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('surprise');
+    newQueue.enqueue('fool');
+    const result = newQueue.dequeue();
+    expect(result).toBe('surprise');
+  });
 
-  // Can successfully peek into a queue, seeing the expected value
-  
-  // Can successfully empty a queue after multiple dequeues
-  
-  // Can successfully instantiate an empty queue
+  it('empties the queue after several dequeues', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('boom');
+    newQueue.enqueue('pow');
+    newQueue.dequeue();
+    newQueue.dequeue();
+    const result = newQueue.dequeue();
+    expect(result).toBe('the queue is empty');
+  });
+
+  it('peeks into the queue', () => {
+    const newQueue = new Queue();
+    newQueue.enqueue('boom');
+    newQueue.enqueue('pow');
+    const result = newQueue.peek();
+    expect(result).toBe('boom');
+  });
+
+  it('instantiates a new queue', () => {
+    const newQueue = new Queue();
+    expect(newQueue.front).toBe(null);
+  });
 
 });
