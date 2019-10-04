@@ -1,4 +1,4 @@
-const { PseudoQueue } = require('./queue-with-stacks');
+const { PseudoQueue } = require('../queue-with-stacks/queueWithStacks');
 
 describe('Queue with Stacks Model', () => {
   it('enqueues a value into stack one', () => {
