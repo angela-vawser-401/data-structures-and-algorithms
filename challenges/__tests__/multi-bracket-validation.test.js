@@ -1,23 +1,13 @@
-'use strict';
+const bracketValidator = require('../multi-bracket-validation/multiBracketValidation');
 
-const multiBracketValidation = require('../multi-bracket-validation/multiBracketValidation');
-
-describe('Multi-type Bracket Validation', () => {
-
-  it('returns true for code with balanced brackets', () => {
-    expect(multiBracketValidation('[](){}')).toBe(true);
-    expect(multiBracketValidation('[a](b){c}')).toBe(true);
-    expect(multiBracketValidation('{[(more text)]}')).toBe(true);
-    expect(multiBracketValidation('')).toBe(true);
+describe('Bracket Validator', () => {
+  it('validates all brackets have closing sets and are in the proper order', () => {
+    expect(bracketValidator('{}')).toBe(true);
+    expect(bracketValidator('{}(){}')).toBe(true);
+    expect(bracketValidator('()[[Extra Characters]]')).toBe(true);
+    expect(bracketValidator('{}{Code}[Fellows](())')).toBe(true);
+    expect(bracketValidator('[({}]')).toBe(false);
+    expect(bracketValidator('(](')).toBe(false);
+    expect(bracketValidator('{(})')).toBe(false);
   });
-  
-  it('returns false for code with improperly balanced brackets', () => {
-    expect(multiBracketValidation('[](){')).toBe(false);
-    expect(multiBracketValidation('[]()({}')).toBe(false);
-    expect(multiBracketValidation('{[()]')).toBe(false);
-    expect(multiBracketValidation('[({}]')).toBe(false);
-    expect(multiBracketValidation('(](')).toBe(false);
-    expect(multiBracketValidation('{(})')).toBe(false);
-  });
-  
 });

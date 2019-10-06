@@ -1,20 +1,22 @@
-const { Stack } = require('../stack-and-queue/stacksAndQueues');
+function bracketValidator(input) {
+  const { Stack } = require('../stack-and-queue/stacksAndQueues');
+  const bracketStack = new Stack();
+  const refArray = ['(', ')', '[', ']', '{', '}'];
+  const bracketArray = input.match(/[({[)}\]]/g);
+  for (let i = 0; i < bracketArray.length; i++) {
+    let popNode;
+    if (bracketArray[i] === '(' || bracketArray[i] === '[' || bracketArray[i] === '{') {
+      bracketStack.push(bracketArray[i]);
+    } else {
+      popNode = bracketStack.pop();
+      if (!popNode) return false;
+      let closedIndex = refArray.indexOf(bracketArray[i]);
+      let openIndex = refArray.indexOf(popNode);
+      if (closedIndex !== openIndex + 1) return false;
+    }
+  }
+  return true;
 
-const getBalancingFunction = stack => ({
-  '{': () => stack.push('}'),
-  '[': () => stack.push(']'),
-  '(': () => stack.push(')'),
-  '}': () => stack.pop() === '}',
-  ']': () => stack.pop() === ']',
-  ')': () => stack.pop() === ')',
-});
-const isTrue = () => true;
+}
 
-module.exports = function multiBracketValidation(input) {
-  const closureStack = new Stack();
-  const bracketBalancer = getBalancingFunction(closureStack);
-  const checkForBalancedBrackets = char => bracketBalancer[char] || isTrue;
-
-  const isBalanced = input.split('').every(char => checkForBalancedBrackets(char)());
-  return isBalanced && closureStack.top === null;
-};
+module.exports = bracketValidator;
