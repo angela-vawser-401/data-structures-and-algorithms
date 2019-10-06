@@ -1,8 +1,9 @@
-language: "node_js"
-node_js: "10"
-before_script:
-  - npm i eslint esm
-  - npm i jsdom
+language: node_js
+node_js:
+  - "stable"
+branches:
+  only:
+    - master
 script:
-  - npx eslint .
-  - npx qunit test/index.js
+  - npm run lint
+  - npm test
