@@ -3,53 +3,48 @@ const { Stack, Queue } = require('../stack-and-queue/stacksAndQueues');
 describe('Stacks and Queues', () => {
   it('pushes a node onto the top of a stack', () => {
 
-    const firstStack = new Stack();
-    firstStack.push('Angela');
-    expect(firstStack.top.value).toBe('Angela');
+    const testStack = new Stack();
+    testStack.push('surprise');
+    expect(testStack.top.value).toBe('surprise');
   });
 
   it('pushes multiple nodes onto a stack', () => {
-    const firstStack = new Stack();
-    firstStack.push('Holy');
-    firstStack.push('Cow');
-    firstStack.push('Angela');
-    expect(firstStack.top.value).toBe('Angela');
-    expect(firstStack.top.next.value).toBe('Cow');
-    expect(firstStack.top.next.next.value).toBe('Holy');
+    const testStack = new Stack();
+    testStack.push('boom');
+    testStack.push('pow');
+    testStack.push('surprise');
+    expect(testStack.top.value).toBe('surprise');
+    expect(testStack.top.next.value).toBe('pow');
+    expect(testStack.top.next.next.value).toBe('boom');
   });
 
   it('pops a node off the top of a stack', () => {
-    const firstStack = new Stack();
-    firstStack.push('Holy');
-    firstStack.push('Cow');
-    firstStack.push('Angela');
-    const result = firstStack.pop();
-    expect(result).toBe('Angela');
+    const testStack = new Stack();
+    testStack.push('boom');
+    testStack.push('pow');
+    testStack.push('surprise');
+    const result = testStack.pop();
+    expect(result).toBe('surprise');
   });
 
   it('empties a stack after multiple pops', () => {
-    const firstStack = new Stack();
-    firstStack.push('Holy');
-    firstStack.push('Cow');
-    firstStack.push('Angela');
-    firstStack.pop();
-    firstStack.pop();
-    firstStack.pop();
-    const result = firstStack.pop();
+    const testStack = new Stack();
+    testStack.push('boom');
+    testStack.push('pow');
+    testStack.push('surprise');
+    testStack.pop();
+    testStack.pop();
+    testStack.pop();
+    const result = testStack.pop();
     expect(result).toBe(null);
   });
 
   it('peeks the top value of a stack', () => {
-    const firstStack = new Stack();
-    firstStack.push('Holy');
-    firstStack.push('Cow');
-    firstStack.push('Angela');
-    expect(firstStack.peek()).toBe('Angela');
-  });
-
-  it('can instatiate an empty stack', () => {
-    const firstStack = new Stack();
-    expect(firstStack.top).toBe(null);
+    const testStack = new Stack();
+    testStack.push('boom');
+    testStack.push('pow');
+    testStack.push('surprise');
+    expect(testStack.peek()).toBe('surprise');
   });
 
   it('can instatiate an empty stack', () => {
@@ -57,13 +52,13 @@ describe('Stacks and Queues', () => {
     expect(testStack.top).toBe(null);
   });
 
-  it('enqueues a new node into the queue', () => {
+  it('enqueues a new node into a queue', () => {
     const newQueue = new Queue();
-    newQueue.enqueue('whoa');
-    expect(newQueue.front.value).toBe('whoa');
+    newQueue.enqueue('boom');
+    expect(newQueue.front.value).toBe('boom');
   });
 
-  it('enqueues multiple nodes into the queue', () => {
+  it('enqueues multiple nodes onto a queue', () => {
     const newQueue = new Queue();
     newQueue.enqueue('boom');
     newQueue.enqueue('pow');
@@ -71,25 +66,25 @@ describe('Stacks and Queues', () => {
     expect(newQueue.front.next.value).toBe('pow');
   });
 
-  it('dequeues the first node', () => {
+  it('can dequeue the first node', () => {
     const newQueue = new Queue();
-    newQueue.enqueue('surprise');
-    newQueue.enqueue('fool');
+    newQueue.enqueue('boom');
+    newQueue.enqueue('pow');
     const result = newQueue.dequeue();
-    expect(result).toBe('surprise');
+    expect(result).toBe('boom');
   });
 
-  it('empties the queue after several dequeues', () => {
+  it('can empty a queue after several dequeues', () => {
     const newQueue = new Queue();
     newQueue.enqueue('boom');
     newQueue.enqueue('pow');
     newQueue.dequeue();
     newQueue.dequeue();
     const result = newQueue.dequeue();
-    expect(result).toBe('the queue is empty');
+    expect(result).toBe('queue is empty');
   });
 
-  it('peeks into the queue', () => {
+  it('can peek into a queue', () => {
     const newQueue = new Queue();
     newQueue.enqueue('boom');
     newQueue.enqueue('pow');
@@ -97,7 +92,7 @@ describe('Stacks and Queues', () => {
     expect(result).toBe('boom');
   });
 
-  it('instantiates a new queue', () => {
+  it('can instantiate a new queue', () => {
     const newQueue = new Queue();
     expect(newQueue.front).toBe(null);
   });

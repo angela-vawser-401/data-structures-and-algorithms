@@ -15,27 +15,27 @@ class LinkedList {
     this.size = 0;
   }
 
-/**
-   * Insert value at the head of list
-   * @param value 
-   */
+  /**
+     * Insert value at the head of list
+     * @param value 
+     */
   insert(value) {
     const node = new Node(value);
     node.next = this.head;
     this.head = node;
-    this.size++; 
+    this.size++;
   }
 
-/**
-   * Checks to see if list includes given value
-   * @param value 
-   * @returns {boolean}
-   */
+  /**
+     * Checks to see if list includes given value
+     * @param value 
+     * @returns {boolean}
+     */
 
   includes(value) {
     let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
-      if(currentNode.value === value) {
+    for (let i = 0; i < this.size; i++) {
+      if (currentNode.value === value) {
         return true;
       } else {
         currentNode = currentNode.next;
@@ -43,14 +43,14 @@ class LinkedList {
     } return false;
   }
 
-/**
-   * Turns all the values from the list into a string
-   * @returns {string}
-   */
+  /**
+     * Turns all the values from the list into a string
+     * @returns {string}
+     */
   toString() {
     let string = '';
     let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
+    for (let i = 0; i < this.size; i++) {
       string = string + currentNode.value;
       currentNode = currentNode.next;
     } return string;
@@ -58,7 +58,7 @@ class LinkedList {
 
 }
 
-module.exports = { 
+module.exports = {
   Node,
   LinkedList,
 };

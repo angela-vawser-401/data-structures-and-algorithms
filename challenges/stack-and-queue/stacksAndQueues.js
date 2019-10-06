@@ -10,18 +10,22 @@ class Stack {
     this.top = null;
   }
 
+  /** 
+   * Push a new node to the top of the stack
+   * @param value
+   */
   push(value) {
     const node = new Node(value);
-    if(!this.top) this.top = node;
+    if (!this.top) this.top = node;
     else {
       node.next = this.top;
       this.top = node;
-    } 
+    }
   }
 
   pop() {
     let result;
-    if(this.top) {
+    if (this.top) {
       result = this.top.value;
       this.top = this.top.next;
     }
@@ -30,7 +34,8 @@ class Stack {
   }
 
   peek() {
-    return this.top.value;
+    if(this.top) return this.top.value;
+    else return null;
   }
 }
 
@@ -41,32 +46,37 @@ class Queue {
 
   enqueue(value) {
     let newNode = new Node(value);
-    let firstNode = this.front;
-    if(!firstNode) {
+    let currentNode = this.front;
+    if(!currentNode) {
       this.front = newNode;
     }
     else {
-      while(firstNode.next) {
-        firstNode = firstNode.next;
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
       }
-      firstNode.next = new Node(value);
+      currentNode.next = new Node(value);
     }
   }
 
   dequeue() {
-    let firstNode = this.front;
+    let currentNode = this.front;
     let result;
-    if(!firstNode) {
-      return 'the queue is empty';
+    if(!currentNode) {
+      return 'queue is empty';
     } else {
-      result = firstNode.value;
-      this.front = firstNode.next;
+
+      result = currentNode.value;
+      this.front = currentNode.next;
     }
     return result;
+
   }
 
   peek() {
-    return this.front.value;
+    if(this.front) return this.front.value;
+    else return null;
+
   }
 }
 

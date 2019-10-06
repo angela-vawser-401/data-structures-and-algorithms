@@ -15,27 +15,27 @@ class LinkedList {
     this.size = 0;
   }
 
-/**
-   * Insert value at the head of list
-   * @param value 
-   */
+  /**
+     * Insert value at the head of list
+     * @param value 
+     */
   insert(value) {
     const node = new Node(value);
     node.next = this.head;
     this.head = node;
-    this.size++; 
+    this.size++;
   }
 
-/**
-   * Checks to see if list includes given value
-   * @param value 
-   * @returns {boolean}
-   */
+  /**
+     * Checks to see if list includes given value
+     * @param value 
+     * @returns {boolean}
+     */
 
   includes(value) {
     let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
-      if(currentNode.value === value) {
+    for (let i = 0; i < this.size; i++) {
+      if (currentNode.value === value) {
         return true;
       } else {
         currentNode = currentNode.next;
@@ -43,14 +43,14 @@ class LinkedList {
     } return false;
   }
 
-/**
-   * Turns all the values from the list into a string
-   * @returns {string}
-   */
+  /**
+     * Turns all the values from the list into a string
+     * @returns {string}
+     */
   toString() {
     let string = '';
     let currentNode = this.head;
-    for(let i = 0; i < this.size; i++) {
+    for (let i = 0; i < this.size; i++) {
       string = string + currentNode.value;
       currentNode = currentNode.next;
     } return string;
@@ -59,7 +59,7 @@ class LinkedList {
   append(value) {
     const node = new Node(value);
 
-    if(this.size) {
+    if (this.size) {
       this.tail.next = node;
       node.previous = this.tail;
       this.tail = node;
@@ -75,17 +75,17 @@ class LinkedList {
   insertBefore(value, newVal) {
     let newNode = new Node(newVal);
     let node = this.head;
-    
-    if(node.value === value) {
+
+    if (node.value === value) {
       this.insert(newVal);
     }
-    while(node.next) {
-      if(!this.head) {
+    while (node.next) {
+      if (!this.head) {
         this.head = new Node(newVal);
         return;
       }
 
-      if(node.next.value === value) {
+      if (node.next.value === value) {
         newNode.next = node.next;
         node.next = newNode;
         node = newNode;
@@ -96,16 +96,16 @@ class LinkedList {
 
   insertAfter(value, newVal) {
     let node = this.head;
-    while(node) {
-      if(!this.head) {
+    while (node) {
+      if (!this.head) {
         this.head = new Node(newVal);
         return;
       }
 
-      if(node.value === value) {
+      if (node.value === value) {
         let newNode = new Node(newVal);
         newNode.next = node.next;
-        node.next = newNode; 
+        node.next = newNode;
 
         return node;
       }
@@ -118,28 +118,28 @@ class LinkedList {
     let index = 0;
     let res;
     console.log(ll);
-    if(k < 0) {
+    if (k < 0) {
       throw new Error('input is way too small');
     }
 
-    if(ll.size === 1) {
+    if (ll.size === 1) {
       throw new Error('make list longer');
     }
 
-    if(k === ll.size) {
+    if (k === ll.size) {
       throw new Error('input cannot be the same length as list');
     }
 
-    if(k > ll.size) {
+    if (k > ll.size) {
       throw new Error('input is too big');
     }
 
-    while(node) {
+    while (node) {
 
-      if(index === k) {
+      if (index === k) {
         res = ll.head;
       }
-      else if(index - k > 0) {
+      else if (index - k > 0) {
         res = res.next;
       }
       index++;
@@ -150,7 +150,7 @@ class LinkedList {
   }
 }
 
-module.exports = { 
+module.exports = {
   Node,
   LinkedList,
 };

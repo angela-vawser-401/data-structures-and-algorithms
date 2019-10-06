@@ -10,7 +10,7 @@ function binarySearch(array, key) {
     } else if(key > array[middle]) {
       start = middle + 1;
     } else if(key < array[middle]) {
-      end = mid - 1; 
+      end = middle - 1; 
     } 
   }
   return -1; 
