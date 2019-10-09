@@ -87,5 +87,5 @@ class BinaryTree {
 
 module.exports = {
   Node,
-  BinaryTree
+  BinaryTree,
 };

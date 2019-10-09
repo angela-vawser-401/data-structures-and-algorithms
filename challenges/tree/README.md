@@ -1,4 +1,4 @@
-# Binary Tree and BST Implementation
+# Implement a Tree
 Write a function with classes and methods that allow one to implement a Stack and Queue Data Structure. 
 
 ## Challenge
