@@ -16,3 +16,4 @@
 * ![queue-with-stacks](challenges/queue-with-stacks)
 * ![fifo-animal-shelter](challenges/fifo-animal-shelter)
 * ![multi-bracket-validation](challenges/multi-bracket-validation)
+* ![tree](challenges/tree)
