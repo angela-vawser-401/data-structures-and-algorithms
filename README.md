@@ -17,3 +17,4 @@
 * ![fifo-animal-shelter](challenges/fifo-animal-shelter)
 * ![multi-bracket-validation](challenges/multi-bracket-validation)
 * ![tree](challenges/tree)
+* ![fizzbuzz-tree](challenges/fizzbuzz-tree)
