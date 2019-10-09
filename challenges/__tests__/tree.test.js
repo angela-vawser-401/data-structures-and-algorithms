@@ -1,4 +1,4 @@
-const { BinaryTree } = require('./tree');
+const { BinaryTree } = require('../tree/tree');
 
 describe('Binary tree', () => {
 
