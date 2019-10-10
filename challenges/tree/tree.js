@@ -1,3 +1,5 @@
+const { Queue } = require('../stack-and-queue/stacksAndQueues');
+
 class Node {
   constructor(value) {
     this.value = value;
