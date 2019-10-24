@@ -13,7 +13,8 @@ function dateAdder(dateObj, diff) {
   let amount = parseInt(diffArr[1]);
   let operator = diffArr[2];
   let dateDiff = formulaTable[operator](amount);
+  
   return new Date(dateObj.valueOf() + dateDiff);
 }
 
-console.log(dateAdder(new Date(), '2d'));
+module.exports = dateAdder;
