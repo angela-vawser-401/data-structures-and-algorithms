@@ -3,7 +3,7 @@ const Hashtable = require('../hashtable/hashtable');
 describe('Hash table functionality', () => {
   it('hashes a key', () => {
     const testTable = new Hashtable();
-    expect(testTable.hash('winner winner')).toBe(9);
+    expect(testTable.hash('winner winner')).toBe(3);
   });
 
   it('adds a key value pair', () => {
