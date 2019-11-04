@@ -19,3 +19,8 @@
 * ![tree](challenges/tree)
 * ![fizzbuzz-tree](challenges/fizzbuzz-tree)
 * ![breadth-first](challenges/breadth-first)
+* ![daily-revenue](challenges/daily-revenue)
+* ![date-adder](challenges/date-adder)
+* ![set](challenges/set)
+* ![hashtable](challenges/hashtable)
+* ![quick-sort](challenges/quick-sort)
