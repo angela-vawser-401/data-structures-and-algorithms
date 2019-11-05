@@ -1,31 +1,48 @@
-const quickSort = (arr, left, right) => {
-  if(left < right) {
-    let position = partition(arr, left, right);
-    quickSort(arr, left, position - 1);
-    quickSort(arr, position + 1, right);
+const mergeSort = arr => {
+  const n = arr.length;
+  let newArr;
+  
+  if(n > 1) {
+    let mid = Math.floor(n / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid, n);
+
+    mergeSort(left);
+    mergeSort(right);
+    newArr = merge(left, right, arr);
+  }
+  return newArr;
+};
+
+const merge = (left, right, arr) => {
+  let i = 0;
+  let j = 0;
+  let k = 0;
+
+  while(i < left.length && j < right.length) {
+    if(left[i] <= right[j]) {
+      arr[k] = left[i];
+      i += 1;
+    } else {
+      arr[k] = right[j];
+      j += 1;
+    }
+    k++;
+  }
+  if(i === left.length) {
+    while(j < right.length) {
+      arr[k] = right[j];
+      k += 1;
+      j += 1;
+    }
+  } else {
+    while(i < left.length) {
+      arr[k] = left[i];
+      k += 1;
+      i += 1;
+    }
   }
   return arr;
 };
 
-const partition = (arr, left, right) => {
-  let pivot = arr[right];
-  let low = left - 1;
-
-  for(let i = left; i < right; i++) {
-    if(arr[i] <= pivot) {
-      low++;
-      swap(arr, i, low);
-    }
-  }
-  swap(arr, right, low + 1);
-  return low + 1;
-};
-
-const swap = (arr, i, low) => {
-  let temp;
-  temp = arr[i];
-  arr[i] = arr[low];
-  arr[low] = temp;
-};
-
-module.exports = quickSort;
+module.exports = mergeSort;
