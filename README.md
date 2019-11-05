@@ -21,6 +21,7 @@
 * ![breadth-first](challenges/breadth-first)
 * ![daily-revenue](challenges/daily-revenue)
 * ![date-adder](challenges/date-adder)
+* ![insertion-sort](challenges/insertion-sort)
 * ![merge-sort](challenges/merge-sort)
 * ![set](challenges/set)
 * ![hashtable](challenges/hashtable)
