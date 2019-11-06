@@ -27,3 +27,4 @@
 * ![hashtable](challenges/hashtable)
 * ![quick-sort](challenges/quick-sort)
 * ![repeated-word](challenges/repeated-word)
+* ![tree-intersection](challenges/tree-intersection)
