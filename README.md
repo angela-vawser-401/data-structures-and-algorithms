@@ -28,3 +28,4 @@
 * ![quick-sort](challenges/quick-sort)
 * ![repeated-word](challenges/repeated-word)
 * ![tree-intersection](challenges/tree-intersection)
+* ![left-join](challenges/left-join)
